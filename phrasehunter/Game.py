@@ -2,8 +2,7 @@ import os
 import time
 import random
 
-
-from phrasehunter import Phrase
+from phrasehunter.Phrase import Phrase
 
 
 phrases = [

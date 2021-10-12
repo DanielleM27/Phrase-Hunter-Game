@@ -1,4 +1,4 @@
-from phrasehunter import Game
+from phrasehunter.Game import Game
 
 
 if __name__ == "__main__":

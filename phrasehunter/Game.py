@@ -22,7 +22,7 @@ class Game():
         self.guesses = [" "]
         
         
-    def start(self):
+   def start(self):
          self.welcome()
          self.active_phrase = Phrase(self.get_random_phrase())
          while self.missed < 5:
@@ -34,16 +34,8 @@ class Game():
                   if not self.active_phrase.check_letter(user_guess):
                     print("Oops! That letter is not in the phrase. {} out of 5 tries remaining!".format(4-self.missed))
                     self.missed += 1
-                  while self.missed > 5:
-                    if self.active_phrase.complete_check(self.guesses):
-                      print('Thats corect!\n')
-                      self.active_phrase.display(self.guesses)
-                      user_guess = self.get_guess()
-                      self.guesses.append(user_guess)
-                      if self.active_phrase.check_letter(user_guess):
-                        print('Thats correct!\n')
+                  if self.game_over():
                     break
-                  self.game_over()
                            
   
                                       
